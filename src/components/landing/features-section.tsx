@@ -34,37 +34,37 @@ export function FeaturesSection() {
   ];
 
   return (
-    <Section id="features" spacing="xl" className="px-4 md:px-0">
-      <div className="text-center mb-8 md:mb-16">
-        <h2 className="text-2xl md:text-h2 font-bold text-foreground mb-3 md:mb-4">
+    <Section id="features" spacing="xl">
+      <div className="text-center mb-16">
+        <h2 className="text-h2 font-bold text-foreground mb-4">
           {t("features.title1")}{" "}
           <span className="text-gradient">{t("features.title2")}</span>
         </h2>
-        <p className="text-sm md:text-body-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
           {t("features.description")}
         </p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <GlassCard
             key={feature.title}
             variant="default"
             size="lg"
             hover="lift"
-            className="group relative overflow-hidden p-4 md:p-6"
+            className="group relative overflow-hidden"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Gradient accent line */}
             <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${feature.gradient} opacity-50 group-hover:opacity-100 transition-opacity`} />
             
-            <div className="space-y-3 md:space-y-4">
-              <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg`}>
-                <feature.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
+            <div className="space-y-4">
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg`}>
+                <feature.icon className="w-7 h-7 text-white" />
               </div>
               
-              <h3 className="text-sm md:text-h4 font-bold text-foreground">{feature.title}</h3>
-              <p className="text-xs md:text-body text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="text-h4 font-bold text-foreground">{feature.title}</h3>
+              <p className="text-body text-muted-foreground">{feature.description}</p>
             </div>
           </GlassCard>
         ))}

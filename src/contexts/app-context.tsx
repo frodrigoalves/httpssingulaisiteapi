@@ -494,7 +494,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const [theme, setThemeState] = useState<Theme>(() => {
     const saved = localStorage.getItem("singulai-theme");
-    return (saved as Theme) || "cyberpunk";
+    return (saved as Theme) || "light";
   });
 
   const setLanguage = (lang: Language) => {
